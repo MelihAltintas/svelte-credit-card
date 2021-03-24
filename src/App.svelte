@@ -10,8 +10,8 @@ let cardHolder = "";
 let cvv = "";
 </script>
 <div class="container">
-	<div class="card mx-auto col-md-6 mt-3 p-0">
-	   <CreditCard {investor} {cardNumber} {expDate} {cardHolder} {cvv} bind:this={creditCard} width="100%"/>
+	<div class="card mx-auto mt-3 p-0" style="width:400px">
+	   <CreditCard {investor} {cardNumber} {expDate} {cardHolder} {cvv} bind:this={creditCard} width="400px"/>
 	   <div class="card-title d-flex px-4">
 		  <p class="item text-muted">Barcelona
 		  </p>
