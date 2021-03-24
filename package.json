@@ -21,7 +21,9 @@
     "sirv-cli": "^1.0.0"
   },
   "description": "A fantastic credit card form with smooth and sweet micro-interactions. Includes number formatting, validation and automatic card type detection. Built with vuejs and also fully responsive.",
-  "main": "rollup.config.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "svelte": "src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MelihAltintas/svelte-credit-card.git"
