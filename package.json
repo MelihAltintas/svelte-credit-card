@@ -1,7 +1,6 @@
 {
-  "name": "svelte-credit-card",
+  "name": "svelte-interactive-creditcard",
   "version": "1.0.0",
-  "private": true,
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
@@ -20,5 +19,18 @@
   },
   "dependencies": {
     "sirv-cli": "^1.0.0"
-  }
+  },
+  "description": "A fantastic credit card form with smooth and sweet micro-interactions. Includes number formatting, validation and automatic card type detection. Built with vuejs and also fully responsive.",
+  "main": "rollup.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MelihAltintas/svelte-credit-card.git"
+  },
+  "keywords": ["svelte-credit-card"],
+  "author": "Melih Altıntaş",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MelihAltintas/svelte-credit-card/issues"
+  },
+  "homepage": "https://github.com/MelihAltintas/svelte-credit-card#readme"
 }
