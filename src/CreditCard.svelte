@@ -3,11 +3,13 @@ import {
     onMount
 } from 'svelte';
 
+export let width = "400px";
+
 export let investor = "INVESTOR";
 export let cardNumber = "0000000000000000";
 export let expDate = "03/21";
 export let cardHolder = "Melih Altıntaş";
-export let ccv = "000";
+export let cvv = "000";
 
 let flip;
 let currentFocusElement;
@@ -15,7 +17,7 @@ let currentFocusElement;
 let cardNumberElement;
 let expDateElement;
 let cardHolderElement;
-let ccvElement;
+let cvvElement;
 
 $: getSrc = () => {
     return "https://raw.githubusercontent.com/MelihAltintas/svelte-credit-card/master/public/creditcards/" + cardType(cardNumber) +".png";
@@ -59,9 +61,9 @@ export function focusCardHolderElement() {
 
 }
 
-export function focusCcvElement() {
+export function focusCvvElement() {
     removeAllFocus();
-    focusElement(ccvElement);
+    focusElement(cvvElement);
 }
 
 export function flipCard(index) {
@@ -75,11 +77,11 @@ export function flipCard(index) {
 
 function focusElement(element) {
     console.log(element.id, currentFocusElement)
-    if (currentFocusElement == undefined && element.id == "ccv") {
+    if (currentFocusElement == undefined && element.id == "cvv") {
         flipCard(1);
-    } else if (currentFocusElement != undefined && currentFocusElement.id != "ccv" && element.id == "ccv") {
+    } else if (currentFocusElement != undefined && currentFocusElement.id != "cvv" && element.id == "cvv") {
         flipCard(1);
-    } else if (currentFocusElement != undefined && currentFocusElement.id == "ccv" && element.id != "ccv") {
+    } else if (currentFocusElement != undefined && currentFocusElement.id == "cvv" && element.id != "cvv") {
         flipCard(0);
     }
     element.style = 'border:1px solid white;transition: border-width 0.6s linear;padding:3px';
@@ -90,7 +92,7 @@ function removeAllFocus() {
     cardNumberElement.style = '';
     expDateElement.style = '';
     cardHolderElement.style = '';
-    ccvElement.style = '';
+    cvvElement.style = '';
 }
 
 onMount(async () => {
@@ -99,7 +101,7 @@ onMount(async () => {
 </script>
 
 <div class="center" >
-    <div class="card">
+    <div class="card" style="width:{width}">
         <div class="flip" bind:this={flip}>
             <div class="front">
                 <div class="strip-bottom"></div>
@@ -131,9 +133,9 @@ onMount(async () => {
             </div>
             <div class="back">
                 <div class="strip-black"></div>
-                <div class="ccv" bind:this={ccvElement} id="ccv">
-                    <label>CCV</label>
-                    <div>{ccv}</div>
+                <div class="ccv" bind:this={cvvElement} id="cvv">
+                    <label for="cvv">CVV</label>
+                    <div>{cvv}</div>
                 </div>
 
             </div>
@@ -144,7 +146,6 @@ onMount(async () => {
 
   <style>
 .card {
-    width: 400px;
     height: 280px;
 }
 
@@ -296,20 +297,8 @@ onMount(async () => {
 
 
 
-.master .circle {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-}
 
-.master .master-red {
-    background-color: #eb001b;
-}
 
-.master .master-yellow {
-    margin-left: -10px;
-    background-color: rgba(255, 209, 0, 0.7);
-}
 
 .card {
     perspective: 1000;
