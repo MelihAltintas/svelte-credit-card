@@ -18,7 +18,7 @@ let cardHolderElement;
 let ccvElement;
 
 $: getSrc = () => {
-    return "creditcards/" + cardType(cardNumber) +".png";
+    return "https://raw.githubusercontent.com/MelihAltintas/svelte-credit-card/master/public/creditcards/" + cardType(cardNumber) +".png";
 }
 $: cardNumberData = cardNumber.padEnd(16, '#')
 
